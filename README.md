@@ -1,25 +1,24 @@
 ### Установка nodejs
 
-1. Загрузите binary архив для вашей системы по [ссылке](https://nodejs.org/en/download/)
-1. Распакуйте архив в папку thirdparty/
-1. Переименуйте папку с нодой (в случае Linux это node-v10.16.3-linux-x64) в просто `node`
-1. Используйте скрипты node/npm (в случае Windows node.cmd/npm.cmd)
-1. В корне проекта вызовите `./npm install` (Linux, MacOS) / `./npm.cmd install` (Windows)
+1. В корне проекта из терминала вызовите `./npmw install` (Linux, MacOS) / `powershell.exe -noprofile -executionpolicy bypass -file .\npmw.ps1 install` (Windows)
 1. Укажите путь к nodejs в среде разработки
 
 
 ### NPM скрипты 
 
+Для Windows используйте `powershell.exe -noprofile -executionpolicy bypass -file .\npmw.ps1` вместо `./npmw`, e.g.:
+`powershell.exe -noprofile -executionpolicy bypass -file .\npmw.ps1 serve`
+
 ```
 # Запуск сборки приложения и веб-сервера:
-$ ./npm serve
+$ ./npmw serve
 
 # Сборка приложения без минификации: 
-$ ./npm run build
+$ ./npmw run build
 
 # Сборка приложения с минификацией: 
-$ ./npm run build:prod
+$ ./npmw run build:prod
 
 # Запуск тестов
-$ ./npm run test
+$ ./npmw run test
 ```
