@@ -15,8 +15,8 @@ const config = {
     entry: './src/main.ts',
 
     output: {
-        filename: '[name].[hash].js',
-        chunkFilename: '[name].[chunkhash].chunk.js',
+        filename: '[name].js',
+        chunkFilename: '[name].chunk.js',
         pathinfo: true
     },
 
