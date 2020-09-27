@@ -2,7 +2,9 @@ export enum Operation {
     SUM,
     SUB,
     DIV,
-    MUL
+    MUL,
+    COM
+
 }
 
 export default class Calculator {
@@ -19,10 +21,18 @@ export default class Calculator {
                     this._currentResult += value;
                     break;
                 case Operation.SUB:
+                    this._currentResult -= value;
                     break;
                 case Operation.DIV:
+                    this._currentResult /= value;
                     break;
                 case Operation.MUL:
+                    this._currentResult *= value;
+                    break;
+                case Operation.COM:
+                    if (Number.isInteger(this._currentResult)) {
+                        this._currentResult = Number(this._currentResult + "." + value);
+                    } 
                     break;
 
             }

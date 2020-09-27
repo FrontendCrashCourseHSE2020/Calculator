@@ -36,5 +36,31 @@ document.addEventListener('DOMContentLoaded', function () {
         // передаём в калькулятор выбранную операцию
         calc.operation = Operation.SUM;
     };
+    // кнопка "минус"
+    document.getElementById('minus').onclick = function () {
+        // передаём в калькулятор выбранную операцию
+        calc.operation = Operation.SUB;
+    };
+    // кнопка "Делить"
+    document.getElementById('divide').onclick = function () {
+        // передаём в калькулятор выбранную операцию
+        calc.operation = Operation.DIV;
+    };
+    // кнопка "Умножить"
+    document.getElementById('multiply').onclick = function () {
+        // передаём в калькулятор выбранную операцию
+        calc.operation = Operation.MUL;
+    };
+    // кнопка "Запятая"
+    document.getElementById('comma').onclick = function () {
+        // передаём в калькулятор выбранную операцию
+        calc.operation = Operation.COM;
+    };
+    // кнопка "очистить"
+    document.getElementById('delite').onclick = function () {
+        // передаём в калькулятор выбранную операцию
+        calc.operation = null;
+        printResult(0);
+    };
 
 });
