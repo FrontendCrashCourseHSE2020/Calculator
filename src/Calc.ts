@@ -12,8 +12,6 @@ export default class Calculator {
 
     private lastOperation: Operation = null;
 
-    private hasDot = false;
-
     public apply(value: number) {
         if (this.lastOperation != null) {
             // если есть операция -- выполняем её
