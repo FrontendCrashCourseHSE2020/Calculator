@@ -57,8 +57,8 @@ document.addEventListener('DOMContentLoaded', function () {
         printResult(calc.currentResult);
     };
     // кнопка "Dot"
-    document.getElementById('dot').onclick = function () {
-        calc.operation = Operation.DOT;
+    document.getElementById('decimal').onclick = function () {
+        calc.operation = Operation.DEC;
     };
 
 });

@@ -3,7 +3,7 @@ export enum Operation {
     SUB,
     DIV,
     MUL,
-    DOT
+    DEC
 }
 
 export default class Calculator {
@@ -28,7 +28,7 @@ export default class Calculator {
                 case Operation.MUL:
                     this._currentResult *= value;
                     break;
-                case Operation.DOT:
+                case Operation.DEC:
                     this._currentResult = Number(this._currentResult + "." + value);
                     break;
             }
