@@ -2,7 +2,8 @@ export enum Operation {
     SUM,
     SUB,
     DIV,
-    MUL
+    MUL,
+    DEC
 }
 
 export default class Calculator {
@@ -19,18 +20,29 @@ export default class Calculator {
                     this._currentResult += value;
                     break;
                 case Operation.SUB:
+                    this._currentResult -= value;
                     break;
                 case Operation.DIV:
+                    this._currentResult /= value;
                     break;
                 case Operation.MUL:
+                    this._currentResult *= value;
                     break;
-
+                case Operation.DEC:
+                    this._currentResult = Number(this._currentResult + "." + value);
+                    break;
             }
         } else {
             // иначе просто делаем выбранное число текущим результатом
             this._currentResult = value;
         }
     }
+
+    public cancel(){
+        this.lastOperation=null;
+        this._currentResult=0;
+    }
+
 
     set operation(value: Operation) {
         this.lastOperation = value;
