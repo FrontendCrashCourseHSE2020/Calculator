@@ -2,7 +2,8 @@ export enum Operation {
     SUM,
     SUB,
     DIV,
-    MUL
+    MUL,
+    DOT
 }
 
 export default class Calculator {
@@ -10,6 +11,8 @@ export default class Calculator {
     private _currentResult = 0;
 
     private lastOperation: Operation = null;
+
+    private hasDot = false;
 
     public apply(value: number) {
         if (this.lastOperation != null) {
@@ -27,7 +30,9 @@ export default class Calculator {
                 case Operation.MUL:
                     this._currentResult *= value;
                     break;
-
+                case Operation.DOT:
+                    this._currentResult = Number(this._currentResult + "." + value);
+                    break;
             }
         } else {
             // иначе просто делаем выбранное число текущим результатом
@@ -39,6 +44,7 @@ export default class Calculator {
         this.lastOperation=null;
         this._currentResult=0;
     }
+
 
     set operation(value: Operation) {
         this.lastOperation = value;

@@ -56,5 +56,9 @@ document.addEventListener('DOMContentLoaded', function () {
         calc.cancel();
         printResult(calc.currentResult);
     };
+    // кнопка "Dot"
+    document.getElementById('dot').onclick = function () {
+        calc.operation = Operation.DOT;
+    };
 
 });
