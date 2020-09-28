@@ -36,5 +36,25 @@ document.addEventListener('DOMContentLoaded', function () {
         // передаём в калькулятор выбранную операцию
         calc.operation = Operation.SUM;
     };
+    // кнопка "minus"
+    document.getElementById('subtraction').onclick = function () {
+        // передаём в калькулятор выбранную операцию
+        calc.operation = Operation.SUB;
+    };
+    // кнопка "division"
+    document.getElementById('division').onclick = function () {
+        // передаём в калькулятор выбранную операцию
+        calc.operation = Operation.DIV;
+    };
+    // кнопка "multiply"
+    document.getElementById('multiply').onclick = function () {
+        // передаём в калькулятор выбранную операцию
+        calc.operation = Operation.MUL;
+    };
+    // кнопка "cancel"
+    document.getElementById('cancel').onclick = function () {
+        calc.cancel();
+        printResult(calc.currentResult);
+    };
 
 });
