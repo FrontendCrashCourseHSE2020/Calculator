@@ -2,41 +2,50 @@ export enum Operation {
     SUM,
     SUB,
     DIV,
-    MUL
+    MUL,
+    SEP
 }
 
 export default class Calculator {
 
-    private _currentResult = 0;
+    private _currentResult = 0
 
-    private lastOperation: Operation = null;
+    private lastOperation: Operation = null
 
     public apply(value: number) {
         if (this.lastOperation != null) {
-            // если есть операция -- выполняем её
             switch (this.lastOperation) {
                 case Operation.SUM:
-                    this._currentResult += value;
-                    break;
+                    this._currentResult += value
+                    break
                 case Operation.SUB:
-                    break;
+                    this._currentResult -= value
+                    break
                 case Operation.DIV:
-                    break;
+                    this._currentResult /= value
+                    break
                 case Operation.MUL:
-                    break;
-
+                    this._currentResult *= value
+                    break
+                case Operation.SEP:
+                    this._currentResult = Number(this._currentResult + '.' + value)
+                    break
             }
         } else {
-            // иначе просто делаем выбранное число текущим результатом
-            this._currentResult = value;
+            this._currentResult = value
         }
     }
 
+    public cancel(){
+        this.lastOperation = null
+        this._currentResult = 0
+    }
+
     set operation(value: Operation) {
-        this.lastOperation = value;
+        this.lastOperation = value
     }
 
     get currentResult() {
-        return this._currentResult;
+        return this._currentResult
     }
 }
