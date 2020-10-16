@@ -37,4 +37,22 @@ document.addEventListener('DOMContentLoaded', function () {
         calc.operation = Operation.SUM;
     };
 
+    // кнопка "минус"
+    document.getElementById('minus').onclick = function () {
+        // передаём в калькулятор выбранную операцию
+        calc.operation = Operation.SUB;
+    };
+
+    // кнопка "делить"
+    document.getElementById('divide').onclick = function () {
+        // передаём в калькулятор выбранную операцию
+        calc.operation = Operation.DIV;
+    };
+
+    // кнопка "умножить"
+    document.getElementById('multiply').onclick = function () {
+        // передаём в калькулятор выбранную операцию
+        calc.operation = Operation.MUL;
+    };
+
 });
