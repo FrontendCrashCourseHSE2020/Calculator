@@ -19,10 +19,13 @@ export default class Calculator {
                     this._currentResult += value;
                     break;
                 case Operation.SUB:
+                    this._currentResult -= value;
                     break;
                 case Operation.DIV:
+                    this._currentResult /= value;
                     break;
                 case Operation.MUL:
+                    this._currentResult *= value;
                     break;
 
             }
